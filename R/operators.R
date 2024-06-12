@@ -46,10 +46,10 @@
 #' @seealso [op-and-null-lgl]
 #'
 #' @examples
-#' #' TRUE `%.&&.%` FALSE # FALSE
-#' NULL `%.&&.%` FALSE # NULL
-#' TRUE  `%.&&.%` NULL # NULL
-#' NULL `%.&&.%` NULL # NULL
+#' TRUE `%.AND.%` FALSE # FALSE
+#' NULL `%.AND.%` FALSE # NULL
+#' TRUE  `%.AND.%` NULL # NULL
+#' NULL `%.AND.%` NULL # NULL
 #'
 #' @export
 `%.AND.%` <- function(x, y)
