@@ -16,10 +16,10 @@
 #' @seealso [op-and-null-nil]
 #'
 #' @examples
-#' TRUE `%.&&.%` FALSE # FALSE
-#' NULL `%.&&.%` FALSE # FALSE
-#' TRUE  `%.&&.%` NULL # FALSE
-#' NULL `%.&&.%` NULL # FALSE
+#' TRUE %.&&.% FALSE # FALSE
+#' NULL %.&&.% FALSE # FALSE
+#' TRUE %.&&.% NULL # FALSE
+#' NULL %.&&.% NULL # FALSE
 #'
 #' @export
 `%.&&.%` <- function(x, y)
@@ -46,10 +46,10 @@
 #' @seealso [op-and-null-lgl]
 #'
 #' @examples
-#' TRUE `%.AND.%` FALSE # FALSE
-#' NULL `%.AND.%` FALSE # NULL
-#' TRUE  `%.AND.%` NULL # NULL
-#' NULL `%.AND.%` NULL # NULL
+#' TRUE %.AND.% FALSE # FALSE
+#' NULL %.AND.% FALSE # NULL
+#' TRUE %.AND.% NULL # NULL
+#' NULL %.AND.% NULL # NULL
 #'
 #' @export
 `%.AND.%` <- function(x, y)
