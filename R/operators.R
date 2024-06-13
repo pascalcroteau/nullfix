@@ -104,12 +104,9 @@
 #' @importFrom magrittr ` %>% `
 `%.>.%` <- function(lhs, rhs)
 {
-  lhs <- substitute(lhs)
-  rhs <- substitute(rhs)
-
   if (is.null(lhs)) return(NULL)
 
-  eval(substitute(l %>% r, list(l=lhs, r=rhs)))
+  lhs %>% rhs
 }
 
 
