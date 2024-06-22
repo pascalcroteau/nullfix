@@ -1,11 +1,22 @@
 Package: nullfix
-Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Version: 0.0.0.9000
+Title: A R Package For Binary Infix Operators Involving NULL
+Description: Provides a variety of binary operators that gracefully handles the
+    'NULL' object.
+Authors@R: 
+    person(given = "Pascal",
+           family = "Croteau",
+           role = c("aut", "cre", "cph"),
+           email = "croteaupascl@gmail.com")
+Imports:
+    magrittr
+License: MIT + file LICENSE
+URL: https://github.com/pascalcroteau/nullfix
+BugReports: https://github.com/pascalcroteau/nullfix/issues
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
