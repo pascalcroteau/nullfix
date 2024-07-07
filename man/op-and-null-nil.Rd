@@ -3,7 +3,7 @@
 \name{op-and-null-nil}
 \alias{op-and-null-nil}
 \alias{\%.AND.\%}
-\title{Logical And Operator That Works With \code{NULL}}
+\title{Logical 'And' Operator That Works With \code{NULL}}
 \usage{
 x \%.AND.\% y
 }

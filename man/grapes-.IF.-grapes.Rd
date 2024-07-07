@@ -21,7 +21,11 @@ This infix operator is inspired by Ruby's \code{if} modifier.
 With the \verb{\%.IF.\%} operator, the \code{x} value is returned if the \code{condition}
 evaluates to \code{TRUE}, and \code{NULL} otherwise.
 
-No checks on \code{condition} are performed; they are left to the \code{if} statement.
+If \code{condition} is either \code{NULL} or missing (\code{NA}), it is treated as \code{FALSE}
+and \code{NULL} is returned.
+
+No other checks on \code{condition} are performed; they are left to the \code{if}
+statement.
 }
 \note{
 The \verb{\%.IF.\%} has low precedence value, so you may have to use parenthesis to

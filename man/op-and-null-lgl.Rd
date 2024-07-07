@@ -3,7 +3,7 @@
 \name{op-and-null-lgl}
 \alias{op-and-null-lgl}
 \alias{\%.&&.\%}
-\title{Logical And Operator That Works With \code{NULL}}
+\title{Logical 'And' Operator That Works With \code{NULL}}
 \usage{
 x \%.&&.\% y
 }
@@ -16,6 +16,7 @@ latter case, \code{FALSE} is returned.
 }
 \description{
 This infix function returns \code{FALSE} when \code{x} is falsey (\code{NULL} or \code{FALSE}).
+It will also returns \code{FALSE} if \code{x} is truthy and \code{y} is \code{NULL}.
 It otherwise works like the operator \code{&&}. It is inspired by the way the
 operator \code{&&} works in Ruby.
 }

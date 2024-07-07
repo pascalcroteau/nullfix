@@ -3,4 +3,5 @@
 export("%.&&.%")
 export("%.AND.%")
 export("%.IF.%")
+export("%.IN.%")
 importFrom(magrittr,`%>%`)

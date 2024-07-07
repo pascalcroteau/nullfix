@@ -1,5 +1,5 @@
 
-#' Logical And Operator That Works With `NULL`
+#' Logical 'And' Operator That Works With `NULL`
 #'
 #' This infix function returns `FALSE` when `x` is falsey (`NULL` or `FALSE`).
 #' It will also returns `FALSE` if `x` is truthy and `y` is `NULL`.
@@ -31,7 +31,7 @@
 
 
 
-#' Logical And Operator That Works With `NULL`
+#' Logical 'And' Operator That Works With `NULL`
 #'
 #' This infix function returns `x` when `x` is falsey (`FALSE` or `NULL`). So it
 #' would return `NULL` if `x` is `NULL`. It otherwise works like the operator
@@ -62,30 +62,6 @@
 
 
 
-#
-# `%.&.%` <- function(x, y)
-# {
-#   nx <- length(x)
-#   ny <- length(y)
-#   if (nx != ny) {
-#     i.n <- which.min(c(nx, ny))
-#     if (i.n == 1L) {
-#       warning("foo")
-#       y <- y[1:nx]
-#     } else {
-#       warning("bar")
-#       x <- x[1:ny]
-#       nx <- ny
-#     }
-#   }
-#   not_null <- !is.null(x) & !is.null(y)
-#
-#   lgl_out <- logical(nx)
-#   if (any(not_null)) lgl_out[not_null] <- x[not_null] & y[not_null]
-#
-#   lgl_out
-# }
-
 
 
 
@@ -96,7 +72,11 @@
 #' With the `%.IF.%` operator, the `x` value is returned if the `condition`
 #' evaluates to `TRUE`, and `NULL` otherwise.
 #'
-#' No checks on `condition` are performed; they are left to the `if` statement.
+#' If `condition` is either `NULL` or missing (`NA`), it is treated as `FALSE`
+#' and `NULL` is returned.
+#'
+#' No other checks on `condition` are performed; they are left to the `if`
+#' statement.
 #'
 #' @note
 #' The `%.IF.%` has low precedence value, so you may have to use parenthesis to
@@ -129,6 +109,8 @@
 #' @export
 `%.IF.%` <- function(x, condition)
 {
+  if (is.null(condition)) return(NULL)
+  if (is.na(condition) && is.logical(condition)) return(NULL)
   if (condition) x else NULL
 }
 
@@ -136,11 +118,36 @@
 
 
 
+#' Membership Operator
+#'
+#' This infix operator is inspired by how the `in` operator works in Python.
+#'
+#' Except when `x` is `NULL`, this operator is the same as \code{\link{\%in\%}}.
+#' Otherwise, when `x` is `NULL`, it is treated as an empty set, which means
+#' that `NULL %.IN.% table` is always `FALSE`, regardless of what `table` is -
+#' including when `table` is `NULL`.
+#'
+#' No checks on `table` are performed; they are left to the `%in%` operator.
+#'
+#' @param x        A R vector or `NULL`. See \code{\link{\%in\%}}. The value to
+#'                 look for.
+#' @param table    A R vector or `NULL`. See \code{\link{\%in\%}}. Where to look
+#'                 for `x`.
+#'
+#' @returns
+#' A logical vector the same length as `x`, or `FALSE` when `x` is `NULL`.
+#'
+#' @examples
+#' 1:10 `%.IN.%` c(1,3,5,9)
+#' NULL `%.IN.%` c(1,3,5,9)
+#'
+#' @export
 `%.IN.%` <- function(x, table)
 {
   if (is.null(x)) return(FALSE)
   `%in%`(x, table)
 }
+
 
 
 #' @importFrom magrittr `%>%`
