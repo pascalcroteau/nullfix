@@ -28,7 +28,7 @@ including when \code{table} is \code{NULL}.
 No checks on \code{table} are performed; they are left to the \code{\%in\%} operator.
 }
 \examples{
-1:10 `\%.IN.\%` c(1,3,5,9)
-NULL `\%.IN.\%` c(1,3,5,9)
+1:10 \%.IN.\% c(1,3,5,9)
+NULL \%.IN.\% c(1,3,5,9)
 
 }

@@ -138,8 +138,8 @@
 #' A logical vector the same length as `x`, or `FALSE` when `x` is `NULL`.
 #'
 #' @examples
-#' 1:10 `%.IN.%` c(1,3,5,9)
-#' NULL `%.IN.%` c(1,3,5,9)
+#' 1:10 %.IN.% c(1,3,5,9)
+#' NULL %.IN.% c(1,3,5,9)
 #'
 #' @export
 `%.IN.%` <- function(x, table)
